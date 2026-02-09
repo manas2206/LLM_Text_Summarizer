@@ -46,14 +46,28 @@ init_db()
 
 # ---------------- MODELS ----------------
 
-models = {
+'''models = {
     "bart": pipeline("summarization", model="facebook/bart-large-cnn"),
     "t5": pipeline("summarization", model="t5-small")
+}
+'''
+# ---------------- MODELS ----------------
+
+models = {
+    "bart": pipeline(
+        task="text2text-generation",
+        model="facebook/bart-large-cnn"
+    ),
+    "t5": pipeline(
+        task="text2text-generation",
+        model="t5-small"
+    )
 }
 
 
 def get_model(name):
     return models.get(name, models["bart"])
+
 
 
 # ---------------- FILE READERS ----------------
@@ -179,7 +193,7 @@ def summarize():
         )
 
 
-        summary = result[0]["summary_text"]
+        summary = result[0]["generated_text"]
 
 
         # ---------- SAVE DB ----------
