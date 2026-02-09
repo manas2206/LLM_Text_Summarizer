@@ -1,5 +1,8 @@
-Flask
+flask
 flask-cors
 transformers
 torch
-PyPDF2
+pypdf2
+python-docx
+werkzeug
+gunicorn

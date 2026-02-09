@@ -1,0 +1,18 @@
+# Python
+venv_LLM/
+__pycache__/
+*.pyc
+*.db
+
+# Node
+node_modules/
+frontend/node_modules/
+
+# Uploads
+backend/uploads/
+
+# VS Code
+.vscode/
+
+# Env
+.env
